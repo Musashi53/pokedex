@@ -1,0 +1,1 @@
+export const mainColor = `rgb(240, 84, 84)`;
