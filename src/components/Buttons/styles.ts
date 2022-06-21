@@ -6,6 +6,7 @@ export const MenuButton = styled.a`
   color: #FFF;
   cursor: pointer;
   transition: .3s;
+  font-size: 2rem;
 
   &:hover {
     color: ${mainColor};
@@ -20,6 +21,12 @@ export const CloseButton = styled.a`
   position: absolute;
   top: 1rem;
   right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+
+  &:hover {
+    color: ${mainColor};
+  }
 
   @media screen and (min-width: 768px) {
     display: none;

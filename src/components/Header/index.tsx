@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Container } from "../../styles/GlobalStyle";
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { RiCloseFill } from 'react-icons/ri';
+import { Container } from "../layout/styles";
 import { MenuButton, CloseButton } from "../Buttons/styles";
 import { Header,
   HeaderContainer,
@@ -34,9 +36,9 @@ const HeaderComponent = () => {
                 <NavLink href="#allpokemons">All Pokemons</NavLink>
               </NavItem>
             </NavList>
-            <CloseButton onClick={() => setToggle(false)}>Close</CloseButton>
+            <CloseButton onClick={() => setToggle(false)}><RiCloseFill/></CloseButton>
           </Nav>
-          <MenuButton onClick={() => setToggle(true)}>Menu</MenuButton>
+          <MenuButton onClick={() => setToggle(true)}><GiHamburgerMenu/></MenuButton>
         </HeaderContainer>
       </Container>
     </Header>

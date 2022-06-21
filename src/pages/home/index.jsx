@@ -1,8 +1,18 @@
+import { Home, HomeImgContent, HomeContent } from "../../components/home/styles";
+import { Container } from "../../components/layout/styles";
+
 const HomePage = () => {
   return (
-    <div>
+    <Home>
+      <Container>
+        <HomeImgContent>
 
-    </div>
+        </HomeImgContent>
+        <HomeContent>
+
+        </HomeContent>
+      </Container>
+    </Home>
   );
 };
 

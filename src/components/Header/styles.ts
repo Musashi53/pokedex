@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import { mainColor } from "../../styles/Variables";
 
+interface ItoggleProps { toggle: boolean }
+
 export const Header = styled.header`
   height: 3.5rem;
   width: 100%;
-  background-color: transparent;
+  background-color: #202020;
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
 
-  @media screen and (min-width: 768px) {
-    top: 0;
-  }
+  @media screen and (min-width: 768px) { top: 0; }
 `;
 
 export const HeaderContainer = styled.div`
@@ -31,7 +31,7 @@ export const Logo = styled.a`
 export const Nav = styled.nav`
   @media screen and (max-width: 767px) {
     position: fixed;
-    bottom: ${(props) => props.toggle ? `0` : `-100%`};
+    bottom: ${(props: ItoggleProps) => props.toggle ? `0` : `-100%`};
     left: 0;
     width: 100%;
     background-color: #303030;
