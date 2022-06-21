@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Poopins', sans-serif;
+    background-color: #202020;
   }
 
   h1, h2, h3, a, p, span {

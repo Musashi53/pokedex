@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RiCloseFill } from 'react-icons/ri';
 import { Container } from "../layout/styles";
@@ -24,16 +25,16 @@ const HeaderComponent = () => {
           <Nav toggle={toggle}>
             <NavList>
               <NavItem>
-                <NavLink href="#home">Home</NavLink>
+                <Link to="/home">home</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="#search">Search</NavLink>
+                <Link to="/allpokemons">all pokemons</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="#categories">Categories</NavLink>
+                <Link to="/categories">categories</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="#allpokemons">All Pokemons</NavLink>
+                <Link to="/search">search</Link>
               </NavItem>
             </NavList>
             <CloseButton onClick={() => setToggle(false)}><RiCloseFill/></CloseButton>
