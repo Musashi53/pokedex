@@ -1,1 +1,1 @@
-export const mainColor = `rgb(240, 84, 84)`;
+export const mainColor = `#8EC5FC`;

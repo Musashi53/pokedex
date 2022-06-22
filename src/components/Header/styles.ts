@@ -6,7 +6,8 @@ interface ItoggleProps { toggle: boolean }
 export const Header = styled.header`
   height: 3.5rem;
   width: 100%;
-  background-color: #202020;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: initial;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -34,10 +35,12 @@ export const Nav = styled.nav`
     bottom: ${(props: ItoggleProps) => props.toggle ? `0` : `-100%`};
     left: 0;
     width: 100%;
-    background-color: #303030;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: unset;
     border-radius: 1rem 1rem 0 0;
     transition: .3s;
-    padding: 3rem 0 2rem 2rem;
+    padding: 3rem 0 5rem 2rem;
+    z-index: 10000;
   }
 
   @media screen and (min-width: 768px) {
@@ -46,8 +49,6 @@ export const Nav = styled.nav`
     display: flex;
     align-items: center;
   }
-
-  
 `;
 
 export const NavList = styled.ul`
@@ -65,13 +66,15 @@ export const NavList = styled.ul`
 export const NavItem = styled.li`
   margin-bottom: 1rem;
 
+  a {
+    transition: .3s;
+    
+    &:hover {
+      color: ${mainColor};
+    }
+  }
+
   @media screen and (min-width: 768px) {
     margin: 0;
-  }
-`;
-
-export const NavLink = styled.a`
-  &:hover {
-    color: ${mainColor};
   }
 `;

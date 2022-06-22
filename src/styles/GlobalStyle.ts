@@ -13,7 +13,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Poopins', sans-serif;
-    background-color: #202020;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
   }
 
   h1, h2, h3, a, p, span {

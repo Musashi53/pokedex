@@ -11,5 +11,6 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
+  padding-top: 4rem;
   height: 100vh;
 `;

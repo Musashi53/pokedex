@@ -10,7 +10,6 @@ import { Header,
   Nav,
   NavList,
   NavItem,
-  NavLink
 
 } from "./styles";
 
