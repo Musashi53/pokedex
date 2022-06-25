@@ -11,6 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-  padding-top: 4rem;
   height: 100vh;
+
+  @media screen and (min-width: 768px) { padding-top: 4rem; }
 `;

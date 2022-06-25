@@ -1,4 +1,5 @@
 import { createGlobalStyle }  from 'styled-components';
+import { mainColor, secondaryColor } from './Variables';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -13,8 +14,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Poopins', sans-serif;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-
+    background-image: linear-gradient(
+      62deg,
+      ${mainColor} 0%,
+      ${secondaryColor} 100%
+    );
   }
 
   h1, h2, h3, a, p, span {

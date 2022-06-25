@@ -24,7 +24,7 @@ const HeaderComponent = () => {
           <Nav toggle={toggle}>
             <NavList>
               <NavItem>
-                <Link to="/home">home</Link>
+                <Link to="/">home</Link>
               </NavItem>
               <NavItem>
                 <Link to="/allpokemons">all pokemons</Link>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mainColor } from "../../styles/Variables";
+import { mainColor, secondaryColor } from "../../styles/Variables";
 
 export const MenuButton = styled.a`
   display: inline-flex;
@@ -34,5 +34,13 @@ export const CloseButton = styled.a`
 `;
 
 export const Button = styled.button`
+  padding: .75rem 1.75rem .75rem 1.75rem;
   display: inline-flex;
+  background-color: ${secondaryColor};
+  color: #FFF;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer;
 `;
