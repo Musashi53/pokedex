@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Poopins', sans-serif;
     background-image: linear-gradient(
-      62deg,
+      to right,
       ${mainColor} 0%,
       ${secondaryColor} 100%
     );
@@ -31,5 +31,22 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &::-webkit-scrollbar {
+		width: .60rem;
+		border-radius: .5rem;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #202020;
+		border-radius: .5rem;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #303030;
   }
 `;

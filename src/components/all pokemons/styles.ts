@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const AllPokemonsContainer = styled.div`
-  padding-top: 3rem;
+  padding: 3rem 0 2rem 0;
   width: 100%;
   display: flex;
   flex-direction: column;
