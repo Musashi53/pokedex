@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface IColorProps {
-  color: object;
-}
-
 export const PokemonCard = styled.div`
   padding: 2rem 0 2rem 0;
   background-color: rgba(255, 255, 255, 0.1);
@@ -13,6 +9,7 @@ export const PokemonCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
   transition: .3s;
 
   &:hover {
@@ -21,7 +18,7 @@ export const PokemonCard = styled.div`
 `;
 
 export const PokemonCardImageContent = styled.div`
-  width: 60%;
+  width: 150px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -32,12 +29,132 @@ export const PokemonCardCircle = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: white;
   align-self: center;
-  
+
+  &.steel {
+	  background-color: #f4f4f4;
+  }
+
+  &.fire {
+    background-color: #FDDFDF;
+  }
+
+  &.grass {
+    background-color: #DEFDE0;
+  }
+
+  &.electric {
+    background-color: #FCF7DE;
+  }
+
+  &.water, .ice {
+    background-color: #DEF3FD;
+  }
+
+  &.ground {
+    background-color: #f4e7da;
+  }
+
+  &.rock {
+    background-color: #d5d5d4;
+  }
+
+  &.fairy {
+    background-color: #fceaff;
+  }
+
+  &.poison {
+    background-color: #98d7a5;
+  }
+
+  &.bug {
+    background-color: #f8d5a3;
+  }
+
+  &.dragon {
+    background-color: #97b3e6;
+  }
+
+  &.psychic {
+    background-color: #eaeda1;
+  }
+
+  &.flying {
+    background-color: #F5F5F5;
+  }
+
+  &.fighting {
+    background-color: #E6E0D4;
+  }
+
+  &.normal {
+    background-color: #F5F5F5;
+  }
 `;
 
 export const PokemonCardImage = styled.img`
-  width: 100%;
+  width: 150px;
   position: absolute;
+`;
+
+export const PokemonCardType = styled.p`
+  &.steel {
+	  background-color: #f4f4f4;
+  }
+
+  &.fire {
+    background-color: #FDDFDF;
+  }
+
+  &.grass {
+    background-color: #DEFDE0;
+  }
+
+  &.electric {
+    background-color: #FCF7DE;
+  }
+
+  &.water, .ice {
+    background-color: #DEF3FD;
+  }
+
+  &.ground {
+    background-color: #f4e7da;
+  }
+
+  &.rock {
+    background-color: #d5d5d4;
+  }
+
+  &.fairy {
+    background-color: #fceaff;
+  }
+
+  &.poison {
+    background-color: #98d7a5;
+  }
+
+  &.bug {
+    background-color: #f8d5a3;
+  }
+
+  &.dragon {
+    background-color: #97b3e6;
+  }
+
+  &.psychic {
+    background-color: #eaeda1;
+  }
+
+  &.flying {
+    background-color: #F5F5F5;
+  }
+
+  &.fighting {
+    background-color: #E6E0D4;
+  }
+
+  &.normal {
+    background-color: #F5F5F5;
+  }
 `;

@@ -43,10 +43,7 @@ export const GlobalStyle = createGlobalStyle`
 		border-radius: .5rem;
 	}
 	&::-webkit-scrollbar-thumb {
-		background-color: #202020;
+		background-color: ${mainColor};
 		border-radius: .5rem;
 	}
-	&::-webkit-scrollbar-thumb:hover {
-		background-color: #303030;
-  }
 `;
