@@ -26,8 +26,8 @@ export const PokemonCardImageContent = styled.div`
 `;
 
 export const PokemonCardCircle = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   align-self: center;
 
@@ -97,64 +97,11 @@ export const PokemonCardImage = styled.img`
   position: absolute;
 `;
 
+export const PokemonCardTitle = styled.h3`
+  font-weight: 300;
+  margin-bottom: 1rem;
+`;
+
 export const PokemonCardType = styled.p`
-  &.steel {
-	  background-color: #f4f4f4;
-  }
-
-  &.fire {
-    background-color: #FDDFDF;
-  }
-
-  &.grass {
-    background-color: #DEFDE0;
-  }
-
-  &.electric {
-    background-color: #FCF7DE;
-  }
-
-  &.water, .ice {
-    background-color: #DEF3FD;
-  }
-
-  &.ground {
-    background-color: #f4e7da;
-  }
-
-  &.rock {
-    background-color: #d5d5d4;
-  }
-
-  &.fairy {
-    background-color: #fceaff;
-  }
-
-  &.poison {
-    background-color: #98d7a5;
-  }
-
-  &.bug {
-    background-color: #f8d5a3;
-  }
-
-  &.dragon {
-    background-color: #97b3e6;
-  }
-
-  &.psychic {
-    background-color: #eaeda1;
-  }
-
-  &.flying {
-    background-color: #F5F5F5;
-  }
-
-  &.fighting {
-    background-color: #E6E0D4;
-  }
-
-  &.normal {
-    background-color: #F5F5F5;
-  }
+  margin-bottom: 1rem;
 `;

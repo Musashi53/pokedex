@@ -3,12 +3,14 @@ import {
   AllPokemonsContainer,
   AllPokemonsContent
 } from "../../components/all pokemons/styles";
+import { Button } from "../../components/Buttons/styles";
 import { Container } from "../../components/layout/styles";
 import { 
   PokemonCard,
   PokemonCardImageContent,
   PokemonCardImage,
   PokemonCardCircle,
+  PokemonCardTitle,
   PokemonCardType
 } from "../../components/pokemon card/styles";
 import { Title } from "../../components/title/style";
@@ -46,8 +48,9 @@ const AllPokemonsPage = () => {
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={pokemon.name }
                 />
               </PokemonCardImageContent>
-              <h3>{pokemon.name}</h3>
-              <PokemonCardType className={pokemon.types[0].type.name}>Olá</PokemonCardType>
+              <PokemonCardTitle>{pokemon.name}</PokemonCardTitle>
+              <PokemonCardType className={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</PokemonCardType>
+              <Button>See details</Button>
             </PokemonCard>))
           }
         </AllPokemonsContent>
