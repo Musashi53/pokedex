@@ -1,19 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from "../pages/home";
-import AllPokemonsPage from "../pages/all pokemons";
-import CategoriesPage from "../pages/categories";
-import SearchPage from "../pages/search";
+import Preview from "../pages/Preview";
+import Home from "../pages/Home";
+import About from "../pages/About";
 
 const Router = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/allpokemons" element={<AllPokemonsPage/>}/>
-        <Route path="/categories" element={<CategoriesPage/>}/>
-        <Route path="/search" element={<SearchPage/>}/>
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Preview/>} />
+      <Route path="/allpokemons" element={<Home/>}/>
+      <Route path="/search" element={<About/>}/>
+    </Routes>
   );
 };
 
