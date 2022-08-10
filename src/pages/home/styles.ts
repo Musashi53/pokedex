@@ -1,25 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Home = styled.div``;
-
-export const HomeImgContent = styled.div`
+export const Container = styled.div`
+  padding: 3rem 0 2rem 0;
   width: 100%;
-  height: 400px;
-  border: 1px solid red;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export const HomeContent = styled.div`
-  
-`;
-
-export const HomeTitle = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-`;
-
-export const HomeDescription = styled.p`
-  font-weight: 200;
-  margin-bottom: 1rem;
-  letter-spacing: .2px;
+export const Content = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 `;

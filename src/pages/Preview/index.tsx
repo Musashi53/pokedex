@@ -1,23 +1,23 @@
 import { Button } from "../../components/button/styles";
-import { Home, HomeImgContent, HomeContent, HomeTitle, HomeDescription } from "../Home/styles";
+import * as P from "./styles";
 import { Container } from "../../components/layout/styles";
 
 const Preview = () => {
   return (
-    <Home>
-      <HomeImgContent>
+    <>
+      <P.PreviewImgContent>
 
-      </HomeImgContent>
+      </P.PreviewImgContent>
       <Container>
-        <HomeContent>
-          <HomeTitle>Your Pokedex!</HomeTitle>
-          <HomeDescription>
+        <P.PreviewContent>
+          <P.PreviewTitle>Your Pokedex!</P.PreviewTitle>
+          <P.PreviewDescription>
             You can see all pokemons, search some pokemon for categories  search for name.
-          </HomeDescription>
+          </P.PreviewDescription>
           <Button>Begin</Button>
-        </HomeContent>
+        </P.PreviewContent>
       </Container>
-    </Home>
+    </>
   );
 };
 
