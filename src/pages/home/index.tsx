@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import * as H from "./styles";
-import { Button } from "../../components/button/styles";
 import { Container } from "../../components/layout/styles";
-import * as C from "../../components/card/styles";
 import { Title } from "../../components/title/style";
 import { api } from "../../services/api";
+import Card from "../../components/card";
 
 type PokemonTypes = {
   type: {
@@ -43,23 +42,7 @@ const Home = () => {
       <H.Container>
         <Title>List of all <br/> Pokemons</Title>
         <H.Content>
-          {pokemons?.map(pokemon => {
-            const pokemonTypes = pokemon.types.map(({ type }) => type.name).join(' | ');
-            return (
-              <C.Card key={pokemon.id}>
-                <C.ImageContent>
-                  <C.Circle/>
-                  <C.Image 
-                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={pokemon.name }
-                  />
-                </C.ImageContent>
-                <C.Title>{pokemon.name}</C.Title>
-                <C.Type>{pokemonTypes}</C.Type>
-                <C.Experience>{pokemon.base_experience}</C.Experience>
-                <Button>See details</Button>
-              </C.Card>
-            );
-          })}
+          {pokemons?.map(pokemon => <Card key={pokemon.id} data={pokemon}/>)}
         </H.Content>
       </H.Container>
     </Container>

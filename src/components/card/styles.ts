@@ -1,14 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { theme } from '../../styles/theme';
+
+interface PokemonType {
+  type: string;
+}
 
 export const Card = styled.div`
-  padding: 2rem 0 2rem 0;
+  padding: 1rem;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: initial;
   border-radius: 1rem;
   color: #FFF;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
   transition: .3s;
 
@@ -18,34 +23,39 @@ export const Card = styled.div`
 `;
 
 export const ImageContent = styled.div`
-  width: 150px;
+  width: 70px;
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 1rem;
 `;
 
-export const Circle = styled.div`
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  align-self: center;
+export const Circle = styled.div<PokemonType>`
+
 `;
 
 export const Image = styled.img`
-  width: 150px;
+  width: 80px;
   position: absolute;
+  left: -.5rem;
+`;
+
+export const Data = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Title = styled.h3`
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 `;
 
 export const Type = styled.span`
-  margin-bottom: 1rem;
+  display: block;
+  margin-bottom: .5rem;
 `;
 
 export const Experience = styled.span`
-  margin-bottom: 1rem;
+  font-weight: bold;
+  display: block;
 `;

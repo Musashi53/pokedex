@@ -11,6 +11,14 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
+
+  @media screen and (min-width: 300px){
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  @media screen and (min-width: 768px){
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `;

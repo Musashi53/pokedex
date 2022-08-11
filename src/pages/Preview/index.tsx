@@ -5,17 +5,17 @@ import { Container } from "../../components/layout/styles";
 const Preview = () => {
   return (
     <>
-      <P.PreviewImgContent>
+      <P.ImgContent>
 
-      </P.PreviewImgContent>
+      </P.ImgContent>
       <Container>
-        <P.PreviewContent>
-          <P.PreviewTitle>Your Pokedex!</P.PreviewTitle>
-          <P.PreviewDescription>
+        <P.Content>
+          <P.Title>Your Pokedex!</P.Title>
+          <P.Description>
             You can see all pokemons, search some pokemon for categories  search for name.
-          </P.PreviewDescription>
+          </P.Description>
           <Button>Begin</Button>
-        </P.PreviewContent>
+        </P.Content>
       </Container>
     </>
   );
