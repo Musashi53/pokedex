@@ -1,5 +1,5 @@
 import { createGlobalStyle }  from 'styled-components';
-import { mainColor, secondaryColor } from './Variables';
+import  { theme } from './theme';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -16,8 +16,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Poopins', sans-serif;
     background-image: linear-gradient(
       to right,
-      ${mainColor} 0%,
-      ${secondaryColor} 100%
+      ${theme.colors.mainColor} 0%,
+      ${theme.colors.secundaryColor} 100%
     );
   }
 
@@ -43,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
 		border-radius: .5rem;
 	}
 	&::-webkit-scrollbar-thumb {
-		background-color: ${mainColor};
+		background-color: ${theme.colors.mainColor};
 		border-radius: .5rem;
 	}
 `;

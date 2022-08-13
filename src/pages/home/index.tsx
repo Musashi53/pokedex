@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import * as H from "./styles";
-import { Container } from "../../components/layout/styles";
+import * as L from "../../components/layout/styles";
 import { Title } from "../../components/title/style";
 import { api } from "../../services/api";
 import Card from "../../components/card";
+import { Input } from "../../components/input/styles";
 
 type PokemonTypes = {
   type: {
@@ -18,17 +19,15 @@ type Pokemon = {
   types: PokemonTypes[];
 }
 
-
 const Home = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     const pokemonsForPromise = [];
     
     for (let i = 1; i <= 150; i++) {
-      pokemonsForPromise.push(
-        api.get(`/${i}`).then(response => response.data)
-      );
+      pokemonsForPromise.push(api.get(`/${i}`).then(response => response.data));
     }
     
     Promise.all(pokemonsForPromise)
@@ -37,15 +36,33 @@ const Home = () => {
     // eslint-disable-next-line
   }, [])
 
+  const filteredPokemons = search.length > 0
+    ? pokemons.filter(pokemon => pokemon.name.includes(search))
+    : [];
+
   return (
-    <Container>
+    <L.Container>
       <H.Container>
-        <Title>List of all <br/> Pokemons</Title>
-        <H.Content>
-          {pokemons?.map(pokemon => <Card key={pokemon.id} data={pokemon}/>)}
-        </H.Content>
+        <Title>List of all Pokemons</Title>
+        <Input
+          name="search"
+          type="text"
+          placeholder="Search"
+          onChange={e => setSearch(e.target.value)}
+          value={search}
+        />        
+        {search.length > 0 ? (
+          <H.Content>
+            {filteredPokemons?.map(pokemon => <Card key={pokemon.id} data={pokemon}/>)}
+          </H.Content>
+        ) : (
+          <H.Content>
+            {pokemons?.map(pokemon => <Card key={pokemon.id} data={pokemon}/>)}
+          </H.Content>
+        )}
+        
       </H.Container>
-    </Container>
+    </L.Container>
   );
 };
 

@@ -1,8 +1,9 @@
 import * as C from './styles';
+import * as L from '../layout/styles';
 
 type PokemonTypes = {
   type: {
-    name: string;
+    name: any;
   }
 }
 
@@ -16,21 +17,31 @@ type Pokemon = {
 }
 
 const Card = ({ data }: Pokemon) => {
-  const pokemonTypes = data.types.map(({ type }) => type.name).join(' | ');
   return (
     <C.Card>
       <C.ImageContent>
         <C.Circle type={data.types[0].type.name}/>
         <C.Image 
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-          alt={data.name }
+          alt={data.name}
         />
       </C.ImageContent>
-      <C.Data>
+      <L.Flex
+        maxWidth='170px'
+        direction='column'
+        align='center'
+        justify='center'
+      >
         <C.Title>{data.name}</C.Title>
-          <C.Type>{pokemonTypes}</C.Type>
-          <C.Experience>{data.base_experience}</C.Experience>
-      </C.Data>
+        <L.Flex
+          justify='center'
+          columnGap='.5rem'
+        >
+          {data.types.map(({ type }: PokemonTypes) => (
+            <C.Type key={type.name} type={type.name}>{type.name}</C.Type>
+          ))}
+        </L.Flex>
+      </L.Flex>
     </C.Card>
   );
 };
