@@ -1,17 +1,15 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
-interface ButtonType {
-  buttonType: 'search' | 'navigator';
-}
-
-export const Button = styled.button<ButtonType>`
+export const Button = styled.button`
+  width: 100%;
   cursor: pointer;
   border: none;
   background-color: ${theme.colors.secundaryColor};
   color: #FFF;
   font-weight: 600;
   display: inline-flex;
+  justify-content: center;
   transition: .3s;
   padding: .75rem 1.75rem;
   font-size: 1rem;

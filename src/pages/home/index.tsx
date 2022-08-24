@@ -5,6 +5,8 @@ import { Title } from "../../components/title/style";
 import { api } from "../../services/api";
 import Card from "../../components/card";
 import { Input } from "../../components/input/styles";
+import { useFetch } from '../../hooks/useFetch';
+
 
 type PokemonTypes = {
   type: {
@@ -15,29 +17,42 @@ type PokemonTypes = {
 type Pokemon = {
   id: number;
   name: string;
-  base_experience: number;
   types: PokemonTypes[];
 }
 
 const Home = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState<string>('');
+  const [isFetching, setIsFetching] = useState<boolean>(true);
+  
 
   useEffect(() => {
-    const pokemonsForPromise = [];
-    
-    for (let i = 1; i <= 150; i++) {
-      pokemonsForPromise.push(api.get(`/${i}`).then(response => response.data));
+    const getPokemons = async () => {
+      try {
+        const pokemonsForPromise = [];
+        
+        for (let i = 1; i <= 150; i++) {
+          pokemonsForPromise.push(await api.get(`/${i}`).then(response => response.data));
+        }
+        
+        await Promise.all(pokemonsForPromise)
+          .then(response => setPokemons(response));
+
+      } catch(e) {
+        alert(`Error: ${e}`);
+
+      } finally {
+        setIsFetching(false);
+        
+      }
     }
-    
-    Promise.all(pokemonsForPromise)
-      .then(response => setPokemons(response));
+    getPokemons();
     
     // eslint-disable-next-line
   }, [])
 
   const filteredPokemons = search.length > 0
-    ? pokemons.filter(pokemon => pokemon.name.includes(search))
+    ? pokemons?.filter(pokemon => pokemon.name.includes(search))
     : [];
 
   return (
@@ -50,7 +65,7 @@ const Home = () => {
           placeholder="Search"
           onChange={e => setSearch(e.target.value)}
           value={search}
-        />        
+        />
         {search.length > 0 ? (
           <H.Content>
             {filteredPokemons?.map(pokemon => <Card key={pokemon.id} data={pokemon}/>)}

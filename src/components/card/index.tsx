@@ -1,5 +1,7 @@
 import * as C from './styles';
 import * as L from '../layout/styles';
+import { Type } from '../type/styles';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 
 type PokemonTypes = {
   type: {
@@ -11,18 +13,23 @@ type Pokemon = {
   data: {
     id: number;
     name: string;
-    base_experience: number;
     types: PokemonTypes[]
   };
 }
 
 const Card = ({ data }: Pokemon) => {
+  const navigate = useNavigate();
+
+  const handleClick = (data: any) => {
+    navigate(`/profile/${data.name}`);
+  }
+  
   return (
-    <C.Card>
+    <C.Card onClick={() => handleClick(data)}>
       <C.ImageContent>
         <C.Circle type={data.types[0].type.name}/>
         <C.Image 
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`}
           alt={data.name}
         />
       </C.ImageContent>
@@ -38,11 +45,11 @@ const Card = ({ data }: Pokemon) => {
           columnGap='.5rem'
         >
           {data.types.map(({ type }: PokemonTypes) => (
-            <C.Type key={type.name} type={type.name}>{type.name}</C.Type>
+            <Type key={type.name} type={type.name}>{type.name}</Type>
           ))}
         </L.Flex>
       </L.Flex>
-    </C.Card>
+    </C.Card>    
   );
 };
 

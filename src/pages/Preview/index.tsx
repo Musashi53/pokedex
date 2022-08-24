@@ -15,7 +15,7 @@ const Preview = () => {
           <P.Description>
             You can see all pokemons, search some pokemon for categories  search for name.
           </P.Description>
-          <Button buttonType="navigator">
+          <Button>
             <Link to="/home">Begin</Link>
           </Button>
         </P.Content>

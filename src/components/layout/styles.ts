@@ -8,15 +8,17 @@ interface IGridProps {
 interface IFlexProps {
   maxWidth?: string;
   align?: 'center';
-  justify?: 'space-between' | 'center';
+  justify?: 'space-between' | 'space-around' | 'center';
   direction?: 'row' | 'column';
   columnGap?: string;
   margin?: string;
+  padding?: string;
 }
 
 export const Container = styled.div`
   max-width: 1368px;
   margin: 0 1.5rem;
+  position: relative;
 
   @media screen and (min-width: 1368px) { margin: auto }
 `;
@@ -38,7 +40,7 @@ export const Flex = styled.div<IFlexProps>`
     justify-content: ${IFlexProps.justify};
     align-items: ${IFlexProps.align};
     margin: ${IFlexProps.margin};
+    padding: ${IFlexProps.padding};
     column-gap: ${IFlexProps.columnGap};
   `}
-  
 `;

@@ -2,23 +2,26 @@ import { createGlobalStyle }  from 'styled-components';
 import  { theme } from './theme';
 
 export const GlobalStyle = createGlobalStyle`
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
 
   html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: 'smooth';
   }
 
   body {
-    font-family: 'Poopins', sans-serif;
-    background-image: linear-gradient(
+    background-color: #303030;
+    /* background-image: linear-gradient(
       to right,
       ${theme.colors.mainColor} 0%,
       ${theme.colors.secundaryColor} 100%
-    );
+    ); */
   }
 
   h1, h2, h3, a, p, span {
@@ -27,10 +30,12 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style: none;
+    color: #FFF;
   }
 
   a {
     text-decoration: none;
+    color: #FFF;
   }
 
   img {

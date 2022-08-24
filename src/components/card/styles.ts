@@ -28,7 +28,7 @@ export const Card = styled.div`
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: initial;
   border-radius: 1rem;
-  color: #FFF;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,8 +51,8 @@ export const ImageContent = styled.div`
 export const Circle = styled.div<PokemonType>`
   ${({ type }) => css`
     background-color: ${theme.colors.card[type]};
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     align-self: center;
   `}
@@ -61,7 +61,7 @@ export const Circle = styled.div<PokemonType>`
 export const Image = styled.img`
   width: 80px;
   position: absolute;
-  left: -.5rem;
+  left: -1rem;
 `;
 
 export const Data = styled.div`
@@ -72,22 +72,5 @@ export const Data = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-weight: 300;
   margin-bottom: 1rem;
-`;
-
-export const Type = styled.span<PokemonType>`
-  ${({ type }) => css`
-    width: 48%;
-    padding: .25rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${theme.colors.card[type]};
-    color: #202020;
-    margin-bottom: .5rem;
-    border-radius: .5rem;
-    font-size: .85rem;
-    font-weight: 300;
-  `}
 `;
