@@ -21,8 +21,6 @@ type Stats = {
   }
 }
 
-
-
 interface PokemonQueryParams {
   name: string | undefined;
 }

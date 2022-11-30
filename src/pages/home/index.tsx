@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import * as H from "./styles";
+import * as H from './styles';
 import * as L from "../../components/layout/styles";
 import { Title } from "../../components/title/style";
 import { api } from "../../services/api";
 import Card from "../../components/card";
 import { Input } from "../../components/input/styles";
-import { useFetch } from '../../hooks/useFetch';
+import PokemonLogo from '../../assets/img/PokemonLogo.png';
+// import { useFetch } from '../../hooks/useFetch';
+
 
 
 type PokemonTypes = {
@@ -20,7 +22,7 @@ type Pokemon = {
   types: PokemonTypes[];
 }
 
-const Home = () => {
+export const Home = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [search, setSearch] = useState<string>('');
   const [isFetching, setIsFetching] = useState<boolean>(true);
@@ -58,7 +60,7 @@ const Home = () => {
   return (
     <L.Container>
       <H.Container>
-        <Title>List of all Pokemons</Title>
+        <H.Img src={PokemonLogo}/>
         <Input
           name="search"
           type="text"
@@ -80,5 +82,3 @@ const Home = () => {
     </L.Container>
   );
 };
-
-export default Home;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+const Container = styled.div`
   padding: 3rem 0 2rem 0;
   width: 100%;
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Content = styled.div`
+const Content = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -22,3 +22,10 @@ export const Content = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 `;
+
+const Img = styled.img`
+  width: 300px;
+  margin-bottom: 3rem;
+`;
+
+export { Container, Content, Img };
