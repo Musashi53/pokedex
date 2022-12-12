@@ -7,28 +7,11 @@ import { Container, Flex } from '../../components/layout/styles';
 import { Type } from '../../components/type/styles';
 import Stats from '../../components/stats';
 import { useEffect, useState } from 'react';
-import { PokemonTypes, Pokemon } from '../../interfaces/pokemon';
-
-type Abilities = {
-  ability: {
-    name: string;
-  }
-}
-
-type Stats = {
-  stats: {
-    name: string;
-  }
-}
-
-interface PokemonQueryParams {
-  name: string | undefined;
-}
-
+import { IPokemonTypes, IPokemon } from '../../interfaces/pokemon';
 
 export const Profile = () => {
   const { name } = useParams();
-  const [selectedPokemon, setSelectedPokemon] = useState<Pokemon[]>([]);
+  const [selectedPokemon, setSelectedPokemon] = useState<IPokemon[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -71,6 +54,7 @@ export const Profile = () => {
                 align='center'
                 justify='space-between'
                 margin='0 0 3rem 0'
+                padding='3rem 0 0 0'
               >
                 <img style={{width: '120px'}}
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={name} />
@@ -82,7 +66,7 @@ export const Profile = () => {
                   <P.Title>{pokemon.name}</P.Title>
                   
                   <Flex justify='center' columnGap='.5rem'>
-                    {pokemon.types.map(({ type }: PokemonTypes) => (
+                    {pokemon.types.map(({ type }: IPokemonTypes) => (
                       <Type key={type.name} type={type.name}>{type.name}</Type>
                     ))}
                     
@@ -90,21 +74,11 @@ export const Profile = () => {
                 </Flex>
                 
               </Flex>
-              <Flex
-                justify='space-around'
-                padding='0 0 .5rem 0'
-              >
-                <a href='#'>About</a>
-                <a href='#'>Stats</a>
-                <a href='#'>Evolution</a>
-              </Flex>
             </Flex>
           </Container>
           
           <P.Box>
-            <Container>
-              <Stats pokemon={pokemon}/>
-            </Container>
+            <Stats pokemon={pokemon}/>
           </P.Box>
         </P.Profile>
       ))}

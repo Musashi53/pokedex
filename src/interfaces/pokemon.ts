@@ -1,10 +1,27 @@
-export interface PokemonTypes {
+export interface IPokemonTypes {
   type: {
-    name: any;
+    name:
+    'steel' |
+    'fire' |
+    'grass' |
+    'electric' |
+    'water' |
+    'ice' |
+    'ground' |
+    'rock' |
+    'fairy' |
+    'poison' |
+    'ghost' |
+    'bug' |
+    'dragon' |
+    'psychic' |
+    'flying' |
+    'fighting' |
+    'normal';
   }
 }
 
-export interface Abilities {
+export interface IAbilities {
   abilities: {
     ability: {
       name: string;
@@ -12,27 +29,26 @@ export interface Abilities {
   }
 }
 
-export interface Stats {
-  
-    base_stat: string;
-    stat: {
-      name: string;
-    }
+export interface IStats {
+  base_stat: string;
+  stat: {
+    name: string;
+  }
   
 }
 
-export interface Pokemon {
+export interface IPokemon {
   name: string;
   id: number;
-  types: PokemonTypes[];
-  stats: Stats[];
+  types: IPokemonTypes[];
+  stats: IStats[];
 }
 
-export interface ProfilePokemon {
+export interface IProfilePokemon {
   pokemon: {
     name: string;
     id: number;
-    types: PokemonTypes[];
-    stats: Stats[];
+    types: IPokemonTypes[];
+    stats: IStats[];
   }
 }

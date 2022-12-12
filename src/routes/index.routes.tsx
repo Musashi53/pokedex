@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Preview from "../pages/Preview";
-import { Home } from "../pages/Home";
+import { Home } from "../pages/home";
 import { Profile } from "../pages/Profile";
 
 export const Router = () => {

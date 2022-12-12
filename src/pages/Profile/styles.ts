@@ -21,10 +21,13 @@ export const Content = styled.div`
 
 export const Box = styled.div`
   width: 100%;
+  height: 60vh;
   padding: 1rem 0;
   border-radius: 1.5rem 1.5rem 0 0;
   background-color: rgba(255, 255, 255, 0.25);
   backdrop-filter: initial;
+  position: fixed;
+  bottom: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
